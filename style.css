@@ -1,0 +1,97 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    background-color: lightgray;
+}
+
+section {
+    background-color: #32DBBC;
+    width: 375px;
+    margin: 10px auto;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 10px;
+
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+h1 {
+    margin: 5px auto;
+    text-align: center;
+}
+
+p#texto {
+    margin: 5px 20px;
+    text-align: justify;
+    font-weight: bolder;
+}
+
+div#principal {
+    background-color: #32B7DB;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+
+    display: flex;
+    flex-flow: column wrap;
+    align-content: space-evenly;
+    align-items: flex-end
+}
+
+div#principal > p {
+    background-color: #32B7DB;
+    margin: 5px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+input[type=number] {
+    width: 150px;
+    height: 25px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+input[type=button] {
+    width: 150px;
+    height: 25px;
+    font-weight: bolder;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type=button]:hover {
+    background-color: black;
+    color: white;
+    font-size: 1em;
+}
+
+button {
+    width: 310px;
+    height: 25px;
+    margin: auto;
+    font-weight: bolder;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: black;
+    color: white;
+    font-size: 1em;
+}
+
+div#res, div#res1 {
+    width: 95%;
+    margin: 5px;
+    padding: 5px;
+    font: normal 1em Arial;
+    text-align: center;
+}

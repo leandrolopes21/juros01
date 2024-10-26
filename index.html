@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calcular Juros</title>
+</head>
+<body>
+    <section>
+        <h1>Cálculo de juros</h1>
+        <p id="texto">Nesta aplicação vamos calcular juros simples ou compostos e verificar a diferença entre ambos</p>
+        <p>---------------------------------------</p>
+        <div id="principal">
+            <p>
+                <label for="capital">Valor inicial: </label>
+                <input type="number" name="capital" id="capital" placeholder="Capital" required>
+            </p>
+            <p>
+                <label for="taxa">Taxa de juros: </label>
+                <input type="number" name="taxa" id="taxa" placeholder="Taxa de juros" required>
+            </p>
+            <p>
+                <label for="">Tempo: </label>
+                <input type="number" name="tempo" id="tempo" placeholder="Tempo" required>
+            </p>
+            <p>
+                <input type="button" value="Juros simples" id="btSimples" onclick="jurosSimples()">
+                <input type="button" value="Juros compostos" id="btComposto" onclick="jurosCompostos()">
+            </p>
+        </div>
+        <div id="res"></div>
+        <div id="res1"></div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
