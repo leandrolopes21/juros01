@@ -1,66 +1,43 @@
-let botaoSimples = document.getElementById('btSimples')
-let botaoComposto = document.getElementById('btComposto')
+let botaoCalcular = document.getElementById('btCalcular')
 let capital = document.getElementById('capital')
 let taxaJuros = document.getElementById('taxa')
 let tempo = document.getElementById('tempo')
 
-let resposta = document.getElementById('res')
-let resposta1 = document.getElementById('res1')
+let respJuroSimples = document.getElementById('juroSimples')
+let respValorSimples = document.getElementById('valorSimples')
+let respJuroComposto = document.getElementById('juroComposto')
+let respValorComposto = document.getElementById('valorComposto')
 
-function jurosSimples() {
+function calculaJuros() {
 
-    let juros
-    let final
+    let juroSimples
+    let juroComposto
+    let montanteSimples
+    let montanteComposto
 
     let valorCapital = Number(capital.value)
     let valorTaxa = Number(taxaJuros.value)
     let valorTempo = Number(tempo.value)
 
-    if (capital.value.trim() == '' || taxaJuros.value.trim() == '' || tempo.value.trim() == '') {
+    // Cálculo do Juro Simples
 
-        resposta.innerHTML = 'Por favor, digite dados para o cálculo!'
+    juroSimples = valorCapital * (valorTaxa/100) * valorTempo
+    montanteSimples = valorCapital + juroSimples
 
-        criaBotaoLimpar()
+    // Cálculo do Juro Composto
 
-    } else {
+    montanteComposto = valorCapital * Math.pow((1 + (valorTaxa/100)), valorTempo)
+    juroComposto = montanteComposto - valorCapital
 
-        juros = valorCapital * (valorTaxa/100) * valorTempo
-        final = valorCapital + juros
+    // Área de apresentar as respostas
 
-        resposta.innerHTML = `Montante final: R$ ${final.toFixed(2)} reais`
-        resposta1.innerHTML = `Rendimento de juros: R$ ${juros.toFixed(2)} reais`
+    respJuroSimples.innerHTML = `${juroSimples}`
+    respValorSimples.innerHTML = `${montanteSimples}`
+    respJuroComposto.innerHTML = `${juroComposto}`
+    respValorComposto.innerHTML = `${montanteComposto}`
 
-        criaBotaoLimpar()
-    }    
+    criaBotaoLimpar()
     
-}
-
-function jurosCompostos() {
-
-    let juros
-    let montante
-
-    let valorCapital = Number(capital.value)
-    let valorTaxa = Number(taxaJuros.value)
-    let valorTempo = Number(tempo.value)
-
-    if (capital.value.trim() == '' || taxaJuros.value.trim() == '' || tempo.value.trim() == '') {
-
-        resposta.innerHTML = 'Por favor, digite dados para o cálculo!'
-
-        criaBotaoLimpar()
-
-    } else {
-
-        montante = valorCapital * Math.pow((1 + (valorTaxa/100)), valorTempo)
-        juros = montante - valorCapital
-
-        resposta.innerHTML = `Montante final: R$ ${montante.toFixed(2)} reais`
-        resposta1.innerHTML = `Rendimento de juros: R$ ${juros.toFixed(2)} reais`
-
-        criaBotaoLimpar()
-
-    }    
 }
 
 function criaBotaoLimpar () {
