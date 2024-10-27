@@ -31,10 +31,10 @@ function calculaJuros() {
 
     // Área de apresentar as respostas
 
-    respJuroSimples.innerHTML = `${juroSimples}`
-    respValorSimples.innerHTML = `${montanteSimples}`
-    respJuroComposto.innerHTML = `${juroComposto}`
-    respValorComposto.innerHTML = `${montanteComposto}`
+    respJuroSimples.innerHTML = `Rendimento calculado a juros simples R$ ${juroSimples}`
+    respValorSimples.innerHTML = `Valor total com rendimentos R$ ${montanteSimples}`
+    respJuroComposto.innerHTML = `Rendimento calculado a juros compostos R$ ${juroComposto}`
+    respValorComposto.innerHTML = `Valor total com rendimentos R$ ${montanteComposto}`
 
     criaBotaoLimpar()
     
@@ -42,8 +42,7 @@ function calculaJuros() {
 
 function criaBotaoLimpar () {
 
-    botaoSimples.disabled = true
-    botaoComposto.disabled = true
+    botaoCalcular.disabled = true
     capital.disabled = true
     taxaJuros.disabled = true
     tempo.disabled = true
@@ -59,8 +58,7 @@ function criaBotaoLimpar () {
 
 function limpar() {
 
-    botaoSimples.disabled = false
-    botaoComposto.disabled = false
+    botaoCalcular.disabled = false
     capital.disabled = false
     taxaJuros.disabled = false
     tempo.disabled = false
@@ -69,8 +67,10 @@ function limpar() {
     taxaJuros.value = ''
     tempo.value = ''
 
-    resposta.innerHTML = ''
-    resposta1.innerHTML = ''
+    respJuroSimples.innerHTML = ''
+    respValorSimples.innerHTML = ''
+    respJuroComposto.innerHTML = ''
+    respValorComposto.innerHTML = ''
 
     let botaoLimpar = document.getElementById('btLimpar')
     botaoLimpar.parentNode.removeChild(botaoLimpar)
