@@ -21,29 +21,34 @@ function calculaJuros() {
     let valorTaxa = Number(taxaJuros.value)
     let valorTempo = Number(tempo.value)
 
-    // Cálculo do Juro Simples
+    if (capital.value.trim() == '' || taxaJuros.value.trim() == '' || tempo.value.trim() == '') {
+        respJuroSimples.innerHTML = 'Por favor, digite os dados para o cálculo!'
+        criaBotaoLimpar()
+    } else {
+        // Cálculo do Juro Simples
 
-    juroSimples = valorCapital * (valorTaxa/100) * valorTempo
-    montanteSimples = valorCapital + juroSimples
+        juroSimples = valorCapital * (valorTaxa/100) * valorTempo
+        montanteSimples = valorCapital + juroSimples
 
-    // Cálculo do Juro Composto
+        // Cálculo do Juro Composto
 
-    montanteComposto = valorCapital * Math.pow((1 + (valorTaxa/100)), valorTempo)
-    juroComposto = montanteComposto - valorCapital
+        montanteComposto = valorCapital * Math.pow((1 + (valorTaxa/100)), valorTempo)
+        juroComposto = montanteComposto - valorCapital
 
-    // Diferença entre juros
+        // Diferença entre juros
 
-    diferenca = juroComposto - juroSimples
+        diferenca = juroComposto - juroSimples
 
-    // Área para apresentar as respostas
+        // Área para apresentar as respostas
 
-    respJuroSimples.innerHTML = `Juros simples: R$ ${juroSimples.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`
-    respValorSimples.innerHTML = `Montante com rendimentos: R$ ${montanteSimples.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`
-    respJuroComposto.innerHTML = `Juros compostos: R$ ${juroComposto.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`
-    respValorComposto.innerHTML = `Montante com rendimentos: R$ ${montanteComposto.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`
-    respDiferenca.innerHTML = `Diferença de rendimento entre juros R$ ${diferenca.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`
+        respJuroSimples.innerHTML = `Juros simples: R$ ${juroSimples.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`
+        respValorSimples.innerHTML = `Montante com rendimentos: R$ ${montanteSimples.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`
+        respJuroComposto.innerHTML = `Juros compostos: R$ ${juroComposto.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`
+        respValorComposto.innerHTML = `Montante com rendimentos: R$ ${montanteComposto.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`
+        respDiferenca.innerHTML = `Diferença de rendimento entre juros R$ ${diferenca.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`
 
-    criaBotaoLimpar()
+        criaBotaoLimpar()
+    }    
     
 }
 
