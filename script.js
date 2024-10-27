@@ -31,15 +31,17 @@ function calculaJuros() {
     montanteComposto = valorCapital * Math.pow((1 + (valorTaxa/100)), valorTempo)
     juroComposto = montanteComposto - valorCapital
 
+    // Diferença entre juros
+
     diferenca = juroComposto - juroSimples
 
-    // Área de apresentar as respostas
+    // Área para apresentar as respostas
 
-    respJuroSimples.innerHTML = `Juros simples: R$ ${juroSimples.toFixed(2)}`
-    respValorSimples.innerHTML = `Montante com rendimentos: R$ ${montanteSimples.toFixed(2)}`
-    respJuroComposto.innerHTML = `Juros compostos: R$ ${juroComposto.toFixed(2)}`
-    respValorComposto.innerHTML = `Montante com rendimentos: R$ ${montanteComposto.toFixed(2)}`
-    respDiferenca.innerHTML = `Diferença de rendimento entre juros R$ ${diferenca.toFixed(2)}`
+    respJuroSimples.innerHTML = `Juros simples: R$ ${juroSimples.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`
+    respValorSimples.innerHTML = `Montante com rendimentos: R$ ${montanteSimples.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`
+    respJuroComposto.innerHTML = `Juros compostos: R$ ${juroComposto.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`
+    respValorComposto.innerHTML = `Montante com rendimentos: R$ ${montanteComposto.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`
+    respDiferenca.innerHTML = `Diferença de rendimento entre juros R$ ${diferenca.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`
 
     criaBotaoLimpar()
     
