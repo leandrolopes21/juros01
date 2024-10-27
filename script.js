@@ -7,6 +7,7 @@ let respJuroSimples = document.getElementById('juroSimples')
 let respValorSimples = document.getElementById('valorSimples')
 let respJuroComposto = document.getElementById('juroComposto')
 let respValorComposto = document.getElementById('valorComposto')
+let respDiferenca = document.getElementById('diferenca')
 
 function calculaJuros() {
 
@@ -14,6 +15,7 @@ function calculaJuros() {
     let juroComposto
     let montanteSimples
     let montanteComposto
+    let diferenca
 
     let valorCapital = Number(capital.value)
     let valorTaxa = Number(taxaJuros.value)
@@ -29,12 +31,15 @@ function calculaJuros() {
     montanteComposto = valorCapital * Math.pow((1 + (valorTaxa/100)), valorTempo)
     juroComposto = montanteComposto - valorCapital
 
+    diferenca = juroComposto - juroSimples
+
     // Área de apresentar as respostas
 
-    respJuroSimples.innerHTML = `Rendimento calculado a juros simples R$ ${juroSimples}`
-    respValorSimples.innerHTML = `Valor total com rendimentos R$ ${montanteSimples}`
-    respJuroComposto.innerHTML = `Rendimento calculado a juros compostos R$ ${juroComposto}`
-    respValorComposto.innerHTML = `Valor total com rendimentos R$ ${montanteComposto}`
+    respJuroSimples.innerHTML = `Juros simples: R$ ${juroSimples.toFixed(2)}`
+    respValorSimples.innerHTML = `Montante com rendimentos: R$ ${montanteSimples.toFixed(2)}`
+    respJuroComposto.innerHTML = `Juros compostos: R$ ${juroComposto.toFixed(2)}`
+    respValorComposto.innerHTML = `Montante com rendimentos: R$ ${montanteComposto.toFixed(2)}`
+    respDiferenca.innerHTML = `Diferença de rendimento entre juros R$ ${diferenca.toFixed(2)}`
 
     criaBotaoLimpar()
     
@@ -71,6 +76,7 @@ function limpar() {
     respValorSimples.innerHTML = ''
     respJuroComposto.innerHTML = ''
     respValorComposto.innerHTML = ''
+    respDiferenca.innerHTML = ''
 
     let botaoLimpar = document.getElementById('btLimpar')
     botaoLimpar.parentNode.removeChild(botaoLimpar)

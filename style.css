@@ -88,10 +88,10 @@ button:hover {
     font-size: 1em;
 }
 
-div#res, div#res1 {
-    width: 95%;
-    margin: 5px;
-    padding: 5px;
+div#juroSimples, div#valorSimples, div#juroComposto, div#valorComposto, div#diferenca {
+    background-color: white;
+    width: 92%;
+    margin: 0px auto;
+    padding: 0px 10px;
     font: normal 1em Arial;
-    text-align: center;
 }
